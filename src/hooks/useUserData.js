@@ -5,14 +5,14 @@ export default function useUserData() {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:1234/user')
+    fetch('http://localhost:1234/users/1')
       .then(response => response.json())
       .then(data => setUser(data))
       .catch(error => console.log(error));
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/employees')
+    fetch('http://localhost:1234/employees')
       .then(response => response.json())
       .then(data => setEmployees(data))
       .catch(error => console.log(error));

@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { Navbar, Nav, Button } from "react-bootstrap";
-import UserInfoModal from './UserInfoModal';
+import UserInfoModal from '../User/UserInfoModal';
 
 const Header = () => {
     const [showModal, setShowModal] = useState(false);
@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <div className="header">
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="ls">
                 <Navbar.Brand href="#">Work Scheduler</Navbar.Brand>
                 <Nav className="ml-auto">
                     <Button variant="outline-primary" onClick={handleShowModal}>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import useUserData from '../hooks/useUserData';
+import useUserData from '../../hooks/useUserData';
+import UserInfo from './UserInfo';
 
 const UserInfoModal = ({ show, handleShowModal, handleCloseModal }) => {
     const { user } = useUserData();
@@ -8,14 +9,10 @@ const UserInfoModal = ({ show, handleShowModal, handleCloseModal }) => {
         return (
             <Modal show={show} onHide={handleCloseModal}>
                 <Modal.Header closeButton>
-                    <Modal.Title>User Info</Modal.Title>
+                    <Modal.Title>{user.name}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div className="user-info">
-                        <h1>Hello, <span>{user.name}</span></h1>
-                        <p>Email: {user.email}</p>
-                        <img src={user.photoURL} alt="User Avatar" />
-                    </div>
+                    <UserInfo name={user.name} email={user.email} photoURL={user.photoURL} role={user.role} />
                 </Modal.Body>
             </Modal>
         );

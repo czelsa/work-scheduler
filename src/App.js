@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Header from './components/Header';
-import Schedule from "./components/ScheduleList";
+import Home from "./components/Home/Home";
+import Header from './components/Common/Header';
+import Schedule from "./components/Scheduler/ScheduleList";
 // import NotFound from "./components/NotFound";
 
 function App() {

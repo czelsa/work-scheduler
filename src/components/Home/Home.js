@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import UserInfo from './UserInfo';
-import ScheduleList from './ScheduleList';
-import CompanyConfig from './CompanyConfig';
+import ScheduleList from '../Scheduler/ScheduleList';
+import CompanyConfig from '../Config/CompanyConfig';
 // import Tabs from './Tabs';
-import Sidebar from './Sidebar';
-import useUserData from '../hooks/useUserData';
+import Sidebar from '../Common/Sidebar';
+import useUserData from '../../hooks/useUserData';
 import './Home.css';
 
 
