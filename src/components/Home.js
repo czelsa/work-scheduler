@@ -1,32 +1,54 @@
-import { Button } from "react-bootstrap";
-import { useNavigate } from "react-router";
-import { useUserAuth } from "../context/UserAuthContext";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import UserInfo from './UserInfo';
+import ScheduleList from './ScheduleList';
+import CompanyConfig from './CompanyConfig';
 
-const Home = () => {
-  const { logOut, user } = useUserAuth();
-  const navigate = useNavigate();
-  const handleLogout = async () => {
-    try {
-      await logOut();
-      navigate("/");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+function Home() {
+  const [user, setUser] = useState(null);
+  const [employees, setEmployees] = useState(null);
+
+  const [activeTab, setActiveTab] = useState('userInfo'); // stan do przechowywania aktywnej podstrony
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  }
+
+  useEffect(() => {
+    fetch('http://localhost:1234/user')
+      .then(response => response.json())
+      .then(data => setUser(data))
+      .catch(error => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/employees')
+      .then(response => response.json())
+      .then(data => setEmployees(data))
+      .catch(error => console.log(error));
+  }, []);
+
+  if (!user && !employees) {
+    return <div>Loading...</div>;
+  }
+
+  console.log(employees)
+  const numEmployees = employees.length;
+  const workDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  const workHours = '8:00 AM - 5:00 PM';
 
   return (
-    <>
-      <div className="p-4 box mt-3 text-center">
-        Hello Welcome <br />
-      </div>
-      <div className="d-grid gap-2">
-        <Button variant="primary" onClick={handleLogout}>
-          Log out
-        </Button>
-      </div>
-    </>
+    <div className="home">
+      <ul className="tabs">
+        <li className={activeTab === 'userInfo' ? 'active' : ''} onClick={() => handleTabClick('userInfo')}>User Info</li>
+        <li className={activeTab === 'config' ? 'active' : ''} onClick={() => handleTabClick('config')}>Config</li>
+        <li className={activeTab === 'schedule' ? 'active' : ''} onClick={() => handleTabClick('schedule')}>Schedule</li>
+      </ul>
+      {activeTab === 'userInfo' && <UserInfo id={user.id} name={user.name} email={user.email} photoURL={user.photoURL} />}
+      {activeTab === 'config' && <CompanyConfig numEmployees={numEmployees} employees={employees} workDays={workDays} workHours={workHours} />}
+      {activeTab === 'schedule' && <ScheduleList />}
+    </div>
   );
-};
+}
 
 export default Home;
-

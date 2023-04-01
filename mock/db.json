@@ -1,0 +1,42 @@
+{
+    "user": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "photoURL": "https://picsum.photos/200/300"
+    },
+    "employees": [
+        {
+            "id": 1,
+            "name": "Jan Kowalski"
+        },
+        {
+            "id": 2,
+            "name": "Anna Nowak"
+        },
+        {
+            "id": 3,
+            "name": "Piotr Zieliński"
+        },
+        {
+            "id": 4,
+            "name": "Maria Szymańska"
+        },
+        {
+            "id": 5,
+            "name": "Andrzej Jankowski"
+        }
+    ],
+    "schedules": [
+        {
+            "id": 1,
+            "title": "Schedule 1",
+            "description": "This is the first schedule"
+        },
+        {
+            "id": 2,
+            "title": "Schedule 2",
+            "description": "This is the second schedule"
+        }
+    ]
+}
