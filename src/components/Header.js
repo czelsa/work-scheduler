@@ -18,7 +18,7 @@ const Header = () => {
                     </Button>
                 </Nav>
             </Navbar>
-            <UserInfoModal show={showModal} onHide={handleCloseModal} />
+            <UserInfoModal show={showModal} handleShowModal={handleShowModal} handleCloseModal={handleCloseModal} />
         </div>
     );
 };
