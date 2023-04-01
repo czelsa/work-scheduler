@@ -1,9 +1,9 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+import Nav from 'react-bootstrap/Nav';
 
 function Sidebar({ activeTab, handleTabClick }) {
   return (
-    <Nav className="flex-column">
+    <Nav className="flex-column sidebar">
       <Nav.Item>
         <Nav.Link className={activeTab === 'userInfo' ? 'active' : ''} onClick={() => handleTabClick('userInfo')}>User Info</Nav.Link>
       </Nav.Item>

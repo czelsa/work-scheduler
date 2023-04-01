@@ -5,6 +5,7 @@ import CompanyConfig from './CompanyConfig';
 // import Tabs from './Tabs';
 import Sidebar from './Sidebar';
 import useUserData from '../hooks/useUserData';
+import './Home.css';
 
 
 function Home() {
