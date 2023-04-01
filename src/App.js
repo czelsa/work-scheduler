@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route exect
+        <Route
           path="/"
           element={
             <Home />

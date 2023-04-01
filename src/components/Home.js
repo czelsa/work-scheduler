@@ -10,7 +10,7 @@ import './Home.css';
 
 function Home() {
   const { user, employees } = useUserData();
-  const [activeTab, setActiveTab] = useState('userInfo'); // stan do przechowywania aktywnej podstrony
+  const [activeTab, setActiveTab] = useState('config'); // stan do przechowywania aktywnej podstrony
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -28,7 +28,6 @@ function Home() {
     <div className="home">
       <Sidebar activeTab={activeTab} handleTabClick={handleTabClick} />
       <div className="content">
-        {/* {activeTab === 'userInfo' && <UserInfo id={user.id} name={user.name} email={user.email} photoURL={user.photoURL} />} */}
         {activeTab === 'config' && <CompanyConfig numEmployees={numEmployees} employees={employees} workDays={workDays} workHours={workHours} />}
         {activeTab === 'schedule' && <ScheduleList />}
       </div>

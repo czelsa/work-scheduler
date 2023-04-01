@@ -9,7 +9,7 @@ const Header = () => {
     const handleCloseModal = () => setShowModal(false);
 
     return (
-        <>
+        <div className="header">
             <Navbar bg="light" expand="lg">
                 <Navbar.Brand href="#">Work Scheduler</Navbar.Brand>
                 <Nav className="ml-auto">
@@ -19,7 +19,7 @@ const Header = () => {
                 </Nav>
             </Navbar>
             <UserInfoModal show={showModal} onHide={handleCloseModal} />
-        </>
+        </div>
     );
 };
 
