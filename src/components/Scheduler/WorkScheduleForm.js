@@ -17,13 +17,13 @@ const WorkScheduleForm = ({ onSubmit }) => {
         Godziny otwarcia zakładu:
         <input
           type="number"
-          className="form-input" 
+          className="form-input"
           value={openingHours.from}
           onChange={(event) => setOpeningHours({ ...openingHours, from: event.target.value })}
         />
         <input
           type="number"
-          className="form-input" 
+          className="form-input"
           value={openingHours.to}
           onChange={(event) => setOpeningHours({ ...openingHours, to: event.target.value })}
         />
@@ -32,7 +32,7 @@ const WorkScheduleForm = ({ onSubmit }) => {
         Ilość pracowników:
         <input
           type="number"
-          className="form-input" 
+          className="form-input"
           value={numOfEmployees}
           onChange={(event) => setNumOfEmployees(event.target.value)}
         />
@@ -40,12 +40,12 @@ const WorkScheduleForm = ({ onSubmit }) => {
       <label className="form__label">
         Rodzaj tygodnia pracy:
         <select className="form__select" value={weekType} onChange={(event) => setWeekType(event.target.value)}>
-            <option className="form__option" value="">--Wybierz--</option>
-            <option className="form__option" value="everyday">Codziennie</option>
-            <option className="form__option" value="weekdays">Od poniedziałku do piątku</option>
-            <option className="form__option" value="businessDays">Tylko w dni handlowe</option>
+          <option className="form__option" value="">--Wybierz--</option>
+          <option className="form__option" value="everyday">Codziennie</option>
+          <option className="form__option" value="weekdays">Od poniedziałku do piątku</option>
+          <option className="form__option" value="businessDays">Tylko w dni handlowe</option>
         </select>
-        </label>
+      </label>
       <button type="submit" className="button">Generuj grafik</button>
     </form>
   );
