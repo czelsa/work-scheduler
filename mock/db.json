@@ -4,14 +4,14 @@
             "id": 1,
             "name": "John Doe",
             "email": "john.doe@example.com",
-            "photoURL": "https://picsum.photos/200/300",
+            "photoURL": "https://picsum.photos/200/200",
             "role": "manager"
         },
         {
             "id": 2,
             "name": "Jan Kowalski",
             "email": "john.doe@example.com",
-            "photoURL": "https://picsum.photos/200/300",
+            "photoURL": "https://picsum.photos/200/200",
             "role": "employee"
         }
 

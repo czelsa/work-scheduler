@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ScheduleList from '../Scheduler/ScheduleList';
+import React, { useState } from 'react';
+import Schedule from '../Scheduler/Schedule';
 import CompanyConfig from '../Config/CompanyConfig';
 // import Tabs from './Tabs';
 import Sidebar from '../Common/Sidebar';
@@ -10,10 +10,11 @@ import './Home.css';
 function Home() {
   const { user, employees } = useUserData();
   const [activeTab, setActiveTab] = useState('config'); // stan do przechowywania aktywnej podstrony
-
+  
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   }
+
 
   if (!user || !employees.length < 0) {
     return <div>Loading...</div>;
@@ -28,7 +29,8 @@ function Home() {
       <Sidebar activeTab={activeTab} handleTabClick={handleTabClick} />
       <div className="content">
         {activeTab === 'config' && <CompanyConfig numEmployees={numEmployees} employees={employees} workDays={workDays} workHours={workHours} />}
-        {activeTab === 'schedule' && <ScheduleList />}
+        {/* {activeTab === 'schedule' && <WorkScheduleForm />} */}
+        {activeTab === 'schedule' && <Schedule />}
       </div>
     </div>
   );
